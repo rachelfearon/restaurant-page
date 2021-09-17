@@ -1,0 +1,97 @@
+* { box-sizing: border-box; }
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+    margin: 0;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+img, picture {
+    max-width: 100%;
+    display: block;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+#content {
+    width: 100%;
+}
+
+/* parallax base */
+body {
+    min-height: 100vh;
+    width: 100%;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    background-color: #F2F2F2;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('assets/chevronpie.JPG');
+    background-size: 100%;
+    /* background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23a9b7bf' fill-opacity='0.38'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 2%; */
+    color: #0D0D0D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+
+} 
+
+header {
+    background-color: #f2f2f2;
+    text-align: center;
+    width: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-basis: 100%;
+    color: #261D1B;
+    padding: 0.5em;
+    font-size: 1.5em;
+}
+
+.navbar {
+    background-color: rgba(128, 128, 128, 0.413);
+    margin-bottom: 3em;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #F2F2F2;
+    text-shadow: 1px 2px 2px black;
+}
+
+button:hover {
+    text-decoration-line: underline;
+}
+
+div {
+    justify-content: center;
+}
+
+p {
+    color: #F2F2F2;
+    background-color: rgba(26, 14, 25, 0.591);
+    display: inline-block;
+    font-size: 1.2em;
+    padding: 2em;
+    margin: 2em;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.65em;
+    position: fixed;
+    bottom: 0;
+    padding: 5px;
+    background-color: #1f1817;
+    color: #f2f2f2c1;
+    width: 100%;
+}
