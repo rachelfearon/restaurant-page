@@ -1,8 +1,38 @@
 import _ from 'lodash';
 import './style.css';
 import { buildAboutContent } from './pages/about';
+import { buildMenuContent } from './pages/menu';
+import { buildContactContent } from './pages/contact';
 
 const content = document.querySelector('#content');
+
+function handleNavbarClick(target) {
+    removeContent();
+    setupConstantPageStructures();
+    if (target == 'about') {
+        buildAboutContent();
+    } else if (target == 'menu') {
+        buildMenuContent();
+    } else if (target == 'contact') {
+        buildContactContent();
+    } else if (target == 'home') {
+        buildHomeContent();
+    } else {
+        return;
+    }
+    
+    applyNavListener();
+}
+
+function setupConstantPageStructures() {
+    content.appendChild(buildHeader());
+    content.appendChild(buildNavBar());
+    content.appendChild(buildFooter());
+}
+
+function removeContent() {
+    content.replaceChildren([]);
+}
 
 function buildHeader() {
     const header = document.createElement('header');
@@ -20,43 +50,34 @@ function buildNavBar() {
     return navbar;
 }
 
-content.addEventListener('click', event => {
-    if (event.target.textContent = 'home') {
-        while (content.firstChild) {
-            content.removeChild(content.lastChild);
-        }
-        setupConstantPageStructures();
-        content.appendChild(buildAboutContent());
-    } else {
-        return;
-    }
-})
-
 function createNavButton(buttonText) {
     const button = document.createElement('button');
     button.textContent = buttonText;
     return button;
 }
 
-function addHomeContent() {
-    const p = document.createElement('p');
-    p.textContent = "Founded in 2001, the Piebird Bakery & Cafe specializes in handmade pies.";
-    return p;
-}
-
 function buildFooter() {
     const footer = document.createElement('footer');
-    footer.textContent = "Photos copyright Rachel Fearon 2021.";
+    footer.textContent = "Photos & illustrations copyright Rachel Fearon 2021.";
     return footer;
 }
 
-function setupConstantPageStructures() {
-    content.appendChild(buildHeader());
-    content.appendChild(buildNavBar());
-    content.appendChild(buildFooter());
+function applyNavListener() {
+    const navbar = document.getElementsByClassName('navbar')[0];
+    navbar.addEventListener('click', event => {
+        handleNavbarClick(event.target.innerText);
+    })
 }
 
+function buildHomeContent() {
+    const p = document.createElement('p');
+    p.textContent = "Welcome to the Piebird Bakery & Cafe!";
+    content.appendChild(p);
+}
+
+
 setupConstantPageStructures();
-content.appendChild(addHomeContent());
+applyNavListener();
+buildHomeContent();
 
 
