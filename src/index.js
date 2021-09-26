@@ -4,6 +4,7 @@ import { buildAboutContent } from './pages/about';
 import { buildMenuContent } from './pages/menu';
 import { buildContactContent } from './pages/contact';
 
+
 const content = document.querySelector('#content');
 
 function handleNavbarClick(target) {
@@ -70,9 +71,9 @@ function applyNavListener() {
 }
 
 function buildHomeContent() {
-    const p = document.createElement('p');
-    p.textContent = "Welcome to the Piebird Bakery & Cafe!";
-    content.appendChild(p);
+    const h3 = document.createElement('h3');
+    h3.textContent = "Welcome to the Piebird Bakery & Cafe!";
+    content.appendChild(h3);
 }
 
 
